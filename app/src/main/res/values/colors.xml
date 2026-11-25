@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="fenix_cream">#FDF6EE</color>
+    <color name="fenix_peach">#F5D6A9</color>
+    <color name="fenix_espresso">#3D1E0D</color>
+    <color name="fenix_espresso_dark">#241005</color>
+    <color name="fenix_orange">#D94E1F</color>
+    <color name="fenix_orange_light">#F27B4B</color>
+    <color name="fenix_green">#1F8A5B</color>
+    <color name="white">#FFFFFF</color>
+</resources>

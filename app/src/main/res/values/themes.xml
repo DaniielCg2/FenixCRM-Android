@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.FenixCRM" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/fenix_orange</item>
+        <item name="colorPrimaryVariant">@color/fenix_espresso</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="android:statusBarColor">@color/fenix_cream</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:windowBackground">@color/fenix_cream</item>
+    </style>
+
+    <style name="Theme.FenixCRM.Alarm" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/fenix_orange</item>
+        <item name="android:statusBarColor">@color/fenix_espresso_dark</item>
+        <item name="android:windowBackground">@color/fenix_espresso_dark</item>
+    </style>
+</resources>

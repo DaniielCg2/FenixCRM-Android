@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fénix CRM</string>
+    <string name="alarm_channel_name">Alarmas de Seguimiento</string>
+    <string name="alarm_channel_desc">Alarmas sonoras para citas de seguimiento en Fénix CRM</string>
+</resources>
