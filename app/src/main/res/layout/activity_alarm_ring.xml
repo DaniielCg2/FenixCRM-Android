@@ -2,55 +2,79 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fenix_espresso_dark"
+    android:background="@drawable/bg_alarm_screen"
     android:gravity="center_horizontal"
     android:orientation="vertical"
-    android:padding="28dp">
+    android:paddingStart="24dp"
+    android:paddingTop="18dp"
+    android:paddingEnd="24dp"
+    android:paddingBottom="28dp">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:letterSpacing="0.18"
-        android:text="FÉNIX CRM · RECORDATORIO"
-        android:textColor="@color/fenix_peach"
-        android:textSize="12sp"
-        android:textStyle="bold" />
+    <!-- Círculo luminoso giratorio con estrellitas y hora dentro -->
+    <FrameLayout
+        android:layout_width="290dp"
+        android:layout_height="290dp"
+        android:layout_marginTop="4dp">
 
-    <TextView
-        android:id="@+id/tvAlarmTime"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="04:00 p. m."
-        android:textColor="@color/fenix_cream"
-        android:textSize="52sp"
-        android:textStyle="bold" />
+        <com.fenixlifereset.crm.SparkleRingView
+            android:id="@+id/sparkleRing"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_pill_label"
+                android:letterSpacing="0.1"
+                android:paddingStart="12dp"
+                android:paddingTop="5dp"
+                android:paddingEnd="12dp"
+                android:paddingBottom="5dp"
+                android:text="FÉNIX CRM · SEGUIMIENTO"
+                android:textColor="#FDF6EE"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvAlarmTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:fontFamily="serif"
+                android:text="04:00 PM"
+                android:textColor="#FDF3D7"
+                android:textSize="40sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- Tarjeta oscura translúcida con datos del contacto -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="10dp"
         android:background="@drawable/bg_alarm_card"
         android:gravity="center_horizontal"
         android:orientation="vertical"
-        android:padding="24dp">
-
-        <ImageView
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:contentDescription="Alarma"
-            android:src="@drawable/ic_alarm_bell"
-            android:tint="@color/fenix_orange_light" />
+        android:paddingStart="20dp"
+        android:paddingTop="22dp"
+        android:paddingEnd="20dp"
+        android:paddingBottom="22dp">
 
         <TextView
             android:id="@+id/tvContactName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="14dp"
             android:gravity="center"
             android:text="Seguimiento"
-            android:textColor="@color/fenix_cream"
+            android:textColor="#FDF6EE"
             android:textSize="26sp"
             android:textStyle="bold" />
 
@@ -61,19 +85,22 @@
             android:layout_marginTop="6dp"
             android:gravity="center"
             android:text="Es hora de escribirle a tu contacto"
-            android:textColor="@color/fenix_peach"
-            android:textSize="15sp" />
+            android:textColor="#E8C9A5"
+            android:textSize="14sp" />
 
-        <com.google.android.material.button.MaterialButton
+        <TextView
             android:id="@+id/btnWhatsApp"
             android:layout_width="match_parent"
             android:layout_height="52dp"
-            android:layout_marginTop="20dp"
-            android:backgroundTint="@color/fenix_green"
-            android:text="Escribir por WhatsApp ahora"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="15sp"
+            android:layout_marginTop="18dp"
+            android:background="@drawable/bg_btn_whatsapp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?attr/selectableItemBackgroundBorderless"
+            android:gravity="center"
+            android:text="Escribir por WhatsApp"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
             android:textStyle="bold" />
     </LinearLayout>
 
@@ -82,23 +109,26 @@
         android:layout_height="0dp"
         android:layout_weight="1" />
 
-    <com.google.android.material.button.MaterialButton
+    <!-- Botón Posponer estilo cápsula cálida translúcida -->
+    <TextView
         android:id="@+id/btnSnooze"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        android:layout_marginBottom="18dp"
-        android:backgroundTint="@color/fenix_peach"
-        android:text="Posponer 5 minutos"
-        android:textAllCaps="false"
-        android:textColor="@color/fenix_espresso_dark"
-        android:textSize="16sp"
+        android:layout_width="210dp"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/bg_btn_snooze"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:gravity="center"
+        android:text="Posponer 5 min"
+        android:textColor="#FDF3D7"
+        android:textSize="15sp"
         android:textStyle="bold" />
 
-    <!-- Control táctil: Deslizar para apagar -->
+    <!-- Barra táctil brillante: Deslizar para apagar -->
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="68dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/bg_slider_track"
         android:paddingStart="6dp"
         android:paddingEnd="6dp">
@@ -108,9 +138,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:paddingStart="28dp"
+            android:paddingEnd="0dp"
             android:text="Desliza para apagar  »"
-            android:textColor="@color/fenix_peach"
-            android:textSize="15sp"
+            android:textColor="#FDF6EE"
+            android:textSize="16sp"
             android:textStyle="bold" />
 
         <SeekBar

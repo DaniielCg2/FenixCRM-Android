@@ -12,7 +12,6 @@ import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.google.android.material.button.MaterialButton
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -55,15 +54,15 @@ class AlarmRingActivity : AppCompatActivity() {
         val tvAlarmTime = findViewById<TextView>(R.id.tvAlarmTime)
         val tvContactName = findViewById<TextView>(R.id.tvContactName)
         val tvAlarmReason = findViewById<TextView>(R.id.tvAlarmReason)
-        val btnWhatsApp = findViewById<MaterialButton>(R.id.btnWhatsApp)
-        val btnSnooze = findViewById<MaterialButton>(R.id.btnSnooze)
+        val btnWhatsApp = findViewById<TextView>(R.id.btnWhatsApp)
+        val btnSnooze = findViewById<TextView>(R.id.btnSnooze)
         val seekDismiss = findViewById<SeekBar>(R.id.seekDismiss)
 
-        val timeFormat = SimpleDateFormat("hh:mm a", Locale("es", "ES"))
-        tvAlarmTime.text = timeFormat.format(Date())
+        val timeFormat = SimpleDateFormat("hh:mm a", Locale.US)
+        tvAlarmTime.text = timeFormat.format(Date()).uppercase(Locale.US)
         tvContactName.text = contactName
         tvAlarmReason.text = reason
-        btnSnooze.text = "Posponer $snoozeMinutes minutos"
+        btnSnooze.text = "Posponer $snoozeMinutes min"
 
         if (whatsappUrl.isBlank()) {
             btnWhatsApp.visibility = View.GONE
